@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XL Struct</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        .sidebar {
+            width: 80px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* background: #fff; */
+            background: #d2dce8;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .sidebar .logo {
+            width: 50px;
+            height: auto;
+            transform: rotate(270deg);
+        }
+        .sidebar .email {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 20px;
+            color: #486eb4;
+        }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 80px;
+            width: 0;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            transition: width 0.3s ease, visibility 0.3s ease;
+            overflow: hidden;
+            padding: 20px;
+            z-index: 999;
+            visibility: hidden;
+        }
+        .menu-overlay.expanded {
+            width: 320px;
+            visibility: visible;
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu-overlay img {
+            width: 250px;
+            margin-top: -50px;
+            /* height: auto; */
+        }
+
+        .menu-overlay .custo {
+            font-size: 10px;
+        }
+
+        .menu-overlay h1 {
+            /* text-align: center; */
+            color: #486eb4;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Primário: Sempre visível com a ordem (de baixo para cima): botão, email, logo -->
+    <div class="sidebar" id="sidebar">
+        <img src="1.png" alt="Logo" class="logo">
+        <span class="email">geral@xlstruct.pt</span>
+        <button class="toggle-btn" id="menu-btn" onclick="toggleMenu()">☰</button>
+    </div>
+
+    <div>
+        <img src="sun_work.jpeg" alt="">
+    </div>
+    
+    <!-- Menu Secundário: Aparece ao lado sem esconder o primário -->
+    <div class="menu-overlay" id="menu-overlay">
+        <img src="1_XLS.png" alt="">
+        <h1>XL Struct</h1>
+        <br>
+        <!-- <p>IMÓVEIS</p> -->
+        <!-- <p>PORTFÓLIO</p> -->
+        <p>SOBRE NÓS</p>
+        <p><strong>Sede:</strong><br>Edificio Torre Brasil<br>Rua Comissão de iniciativa, 2A Escritório 301<br>2410-098 Leiria</p>
+        <!-- <p><strong>Delegação Sul:</strong><br>Marina Plaza, Av. da Marina, Bloco 33B – 2º Dto., 8125-401 Vilamoura – Quarteira, Portugal</p> -->
+        <p><strong>Contactos:</strong><br>+351 244 840 083<br><span class="custo">* Custo de Chamada para a rede fixa nacional</span></p>
+        <p></p>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            const menuOverlay = document.getElementById('menu-overlay');
+            const menuBtn = document.getElementById('menu-btn');
+            menuOverlay.classList.toggle('expanded');
+            if (menuOverlay.classList.contains('expanded')) {
+                menuBtn.textContent = '✖';
+            } else {
+                menuBtn.textContent = '☰';
+            }
+        }
+    </script>
+</body>
+</html>
