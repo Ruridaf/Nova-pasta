@@ -1,118 +1,275 @@
 <!DOCTYPE html>
+
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XL Struct</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-        .sidebar {
-            width: 80px;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            /* background: #fff; */
-            background: #d2dce8;
-            border-right: 1px solid #ddd;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 0;
-            z-index: 1000;
-        }
-        .sidebar .logo {
-            width: 50px;
-            height: auto;
-            transform: rotate(270deg);
-        }
-        .sidebar .email {
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            font-size: 20px;
-            color: #486eb4;
-        }
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 80px;
-            width: 0;
-            height: 100vh;
-            background: rgba(255, 255, 255, 0.95);
-            transition: width 0.3s ease, visibility 0.3s ease;
-            overflow: hidden;
-            padding: 20px;
-            z-index: 999;
-            visibility: hidden;
-        }
-        .menu-overlay.expanded {
-            width: 320px;
-            visibility: visible;
-        }
-        .toggle-btn {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .menu-overlay img {
-            width: 250px;
-            margin-top: -50px;
-            /* height: auto; */
-        }
-
-        .menu-overlay .custo {
-            font-size: 10px;
-        }
-
-        .menu-overlay h1 {
-            /* text-align: center; */
-            color: #486eb4;
-        }
-    </style>
-</head>
-<body>
-    <!-- Menu Primário: Sempre visível com a ordem (de baixo para cima): botão, email, logo -->
-    <div class="sidebar" id="sidebar">
-        <img src="1.png" alt="Logo" class="logo">
-        <span class="email">geral@xlstruct.pt</span>
-        <button class="toggle-btn" id="menu-btn" onclick="toggleMenu()">☰</button>
-    </div>
-
-    <div>
-        <img src="sun_work.jpeg" alt="">
-    </div>
     
-    <!-- Menu Secundário: Aparece ao lado sem esconder o primário -->
-    <div class="menu-overlay" id="menu-overlay">
-        <img src="1_XLS.png" alt="">
-        <h1>XL Struct</h1>
-        <br>
-        <!-- <p>IMÓVEIS</p> -->
-        <!-- <p>PORTFÓLIO</p> -->
-        <p>SOBRE NÓS</p>
-        <p><strong>Sede:</strong><br>Edificio Torre Brasil<br>Rua Comissão de iniciativa, 2A Escritório 301<br>2410-098 Leiria</p>
-        <!-- <p><strong>Delegação Sul:</strong><br>Marina Plaza, Av. da Marina, Bloco 33B – 2º Dto., 8125-401 Vilamoura – Quarteira, Portugal</p> -->
-        <p><strong>Contactos:</strong><br>+351 244 840 083<br><span class="custo">* Custo de Chamada para a rede fixa nacional</span></p>
-        <p></p>
-    </div>
-    
-    <script>
-        function toggleMenu() {
-            const menuOverlay = document.getElementById('menu-overlay');
-            const menuBtn = document.getElementById('menu-btn');
-            menuOverlay.classList.toggle('expanded');
-            if (menuOverlay.classList.contains('expanded')) {
-                menuBtn.textContent = '✖';
-            } else {
-                menuBtn.textContent = '☰';
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            XL Struct
+        </title>
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <!-- <link rel="stylesheet" href="estilo.css"> -->
+
+        <style>
+            body {
+                min-width: 360px;
+                overflow-x: hidden;
+                margin-left: 80px;
             }
-        }
-    </script>
-</body>
+            .sidebar {
+                width: 80px;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                /* background: #fff; */
+                background: #d2dce8;
+                border-right: 1px solid #ddd;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+            .sidebar .logo {
+                width: 50px;
+                height: auto;
+                transform: rotate(270deg);
+            }
+            .sidebar .email {
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                font-size: 20px;
+                color: #486eb4;
+            }
+            .menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 80px;
+                width: 0;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.95);
+                transition: width 0.3s ease, visibility 0.3s ease;
+                overflow: hidden;
+                padding: 20px;
+                z-index: 999;
+                visibility: hidden;
+            }
+            .menu-overlay.expanded {
+                width: 320px;
+                visibility: visible;
+            }
+            .toggle-btn {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .menu-overlay img {
+                width: 250px;
+                margin-top: -50px;
+                /* height: auto; */
+            }
+
+            .menu-overlay .custo {
+                font-size: 10px;
+            }
+
+            .menu-overlay h1 {
+                /* text-align: center; */
+                color: #486eb4;
+            }
+
+            .carousel img{
+                height: 39vw;
+                min-height: 259px;
+                object-fit: cover;
+            }
+
+            .titulo{
+                font-size: 60px;
+                font-weight: bold;
+                color: #486eb4;
+                /* text-align: center; */
+                /* margin: 0; */
+                /* padding: 0; */
+            }
+
+            .rodape{
+                background-color: #486eb4;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                /* position: fixed; */
+                bottom: 0;
+                /* width: 100%; */
+            }
+
+            .rodape p{
+                margin: 1px;
+                padding: 3px;
+            }
+
+            .rodape a{
+                color: white;
+                text-decoration: none;
+            }
+
+            .rodape a:hover{
+                color: #f1f1f1;
+            }
+
+            .sidebar a{
+                text-decoration: none;
+                color: #486eb4;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <header class="container-fluid">
+
+            <div class="row">
+
+                    <!-- Menu Primário: Sempre visível com a ordem (de baixo para cima): botão, email, logo -->
+                <div class="sidebar col-auto" id="sidebar">
+                    <img src="1.png" alt="Logo" class="logo">
+                    <span class="email"><a href="mailto:geral@xlstruct.pt">geral@xlstruct.pt</a></span>
+                    <button class="toggle-btn" id="menu-btn" onclick="toggleMenu()">☰</button>
+                </div>
+
+                <div class="col-12 p-0">
+
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+    
+                        <div class="carousel-inner">
+    
+                          <div class="carousel-item active">
+                            <img src="imagem1.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="sun_work.jpeg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="imagem2.jpg" class="d-block w-100" alt="...">
+                          </div>
+    
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <!-- Menu Secundário: Aparece ao lado sem esconder o primário -->
+            <div class="menu-overlay" id="menu-overlay">
+                <img src="1_XLS.png" alt="">
+                <!-- <h1>XL Struct</h1> -->
+                <br>
+                <p>
+                    <a class="link-offset-2 link-underline link-underline-opacity-0" href="#sobre">Sobre Nós</a>
+                </p>
+                <p>
+                    <a class="link-offset-2 link-underline link-underline-opacity-0" href="#onde">Onde Estamos</a>
+                </p><p>
+                    <a class="link-offset-2 link-underline link-underline-opacity-0" href="#rodape">Contactos</a>
+                </p>
+                
+                <!-- <p>SOBRE NÓS</p> -->
+                <p><strong>Sede:</strong><br>Edificio Torre Brasil<br>Rua Comissão de iniciativa, 2A Escritório 301<br>2410-098 Leiria</p>
+
+                <p><strong>Contactos:</strong><br>+351 244 840 083<br><span class="custo">* Custo de Chamada para a rede fixa nacional</span></p>
+            </div>
+
+        </header>
+
+        <main class="container-fluid">
+
+            <div class="row mt-3 mt-md-4 pt-2">
+                <div class="px-1 px-md-2 col-10 col-md-9 mx-auto text-center">
+                    <h1 class="titulo" id="sobre">
+                        XLStruct
+                    </h1>
+                    <h1 class="subtitulo">
+                        Inovação e Sustentabilidade na Construção
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row mt-3 mt-md-5">
+                <div class="px-1 px-md-2 col-10 col-md-9 px-xl-5 mx-auto texto">
+                    <p>
+                        Na XLStruct, estamos a redefinir o futuro da construção. Especializados em soluções alternativas à construção tradicional, combinamos know-how em pré-fabricação, sistemas modulares e sustentabilidade para criar projetos que são não só eficientes, mas também ambientalmente responsáveis.
+                    </p>
+                    <p>
+                        Com uma equipa multidisciplinar de profissionais experientes nas áreas de construção, engenharia e design, oferecemos soluções integradas que vão desde o conceito até à execução. A nossa equipa de engenharia desenvolve projetos de execução para obra em BIM (Building Information Modeling), garantindo precisão, coordenação e otimização em todas as fases do projeto.
+                    </p>
+                    <p>
+                        Na XLStruct, acreditamos que a construção do futuro deve ser mais rápida, mais inteligente e mais sustentável. Por isso, investimos em tecnologias inovadoras e métodos construtivos que reduzem prazos, custos e impactos ambientais, sem comprometer a qualidade ou a segurança.
+                    </p>
+                    <p>
+                        Seja para projetos residenciais, comerciais ou industriais, a XLStruct está comprometida em entregar soluções que superam expectativas, unindo inovação, sustentabilidade e excelência técnica.
+                    </p>
+                    <p>
+                        Junte-se a nós na construção de um futuro mais eficiente e sustentável.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-5 mb-0" id="onde">
+                <div class="col p-0 mapa">
+                    <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:500px;"><div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/search?q=Rua+Comissão+de+Iniciativa+2A&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="google-map-html" href="https://www.bootstrapskins.com/themes" id="authmaps-data">premium bootstrap themes</a><style>#embedded-map-display img{max-height:none;max-width:none!important;background:none!important;}</style></div>
+                </div>
+
+            </div>
+            
+        </main>
+
+        <footer class="container-fluid">
+            <div class="row" id="rodape">
+                <div class="col rodape">
+                    <h2>Contacte-nos</h2>
+                    <br>
+                    <p>Telefone: +351 244 840 083</p>
+                    <p><a href="mailto:geral@xlstruct.pt">Email: geral@xlstruct.pt</a></p>
+                    <p>Morada: Edificio Torre Brasil<br>
+                        Rua Comissão de iniciativa, 2A Escritório 301<br>
+                        2410-098 Leiria</p>
+                </div>
+
+            </div>
+        </footer>
+        
+        <script>
+            function toggleMenu() {
+                const menuOverlay = document.getElementById('menu-overlay');
+                const menuBtn = document.getElementById('menu-btn');
+                menuOverlay.classList.toggle('expanded');
+                if (menuOverlay.classList.contains('expanded')) {
+                    menuBtn.textContent = '✖';
+                } else {
+                    menuBtn.textContent = '☰';
+                }
+            }
+        </script>
+    </body>
 </html>
