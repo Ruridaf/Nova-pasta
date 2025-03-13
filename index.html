@@ -58,7 +58,7 @@
                 left: 80px;
                 width: 0;
                 height: 100vh;
-                background: rgba(255, 255, 255, 0.80);
+                background: rgba(210, 220, 232, 0.75);
                 transition: width 0.9s ease, visibility 0.1s ease;
                 overflow: hidden;
                 padding: 20px;
@@ -275,8 +275,9 @@
 
                 <br>
                 <p>
-                    <a class="sociais" href="#"><img src="imagens/instagram.svg" alt=""></a>
-                    <a class="sociais" href="#"><img src="imagens/facebook.svg" alt=""></a>
+                    <a class="menu-link sociais" href="#" target="_blank"><img src="imagens/instagram.svg" alt=""></a>
+                    <a class="menu-link sociais" href="#" target="_blank"><img src="imagens/facebook.svg" alt=""></a>
+                    <a class="menu-link sociais" href="#" target="_blank"><img src="imagens/linkedin.svg" alt=""></a>
                 </p>
             </div>
 
@@ -366,15 +367,16 @@
                 
                 <div class="col-md-5">
                     <h5>Siga-nos</h5>
-                    <a href="#"><img src="imagens/instagram.svg" class="social-icon"></a>
-                    <a href="#"><img src="imagens/facebook.svg" class="social-icon"></a>
+                    <a href="#" target="_blank"><img src="imagens/instagram.svg" class="social-icon"></a>
+                    <a href="#" target="_blank"><img src="imagens/facebook.svg" class="social-icon"></a>
+                    <a href="#" target="_blank"><img src="imagens/linkedin.svg" class="social-icon"></a>
                 </div>
             </div>
         
             <hr class="mt-2 mb-2 border-light w-75 mx-auto">
         
             <div class="text-center pb-3">
-                <p class="m-0">&copy; 2025 LGarcia. Todos os direitos reservados.</p>
+                <p class="m-0">&copy; <span id="ano"></span> <a href="https://www.linkedin.com/in/luis-g-604459284" target="_blank">LGarcia. Todos os direitos reservados.</a> </p>
             </div>
         </footer>
         
@@ -403,6 +405,8 @@
                     toggleMenu();
                 });
             });
+
+            document.getElementById("ano").textContent = new Date().getFullYear();
 
         </script>
     </body>
