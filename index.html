@@ -1,0 +1,182 @@
+<!-- Luis Garcia 03/2025 -->
+
+<!DOCTYPE html>
+
+<html lang="pt">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- SEO: Meta Description e Keywords -->
+        <meta name="description" content="XLStruct - Construção sustentável e inovadora.">
+        <meta name="keywords" content="construção, sustentabilidade, engenharia, estruturas modulares">
+        <!-- Título e Ícone -->
+        <link rel="icon" type="image/x-icon" href="imagens/favicon.png">
+        <title>
+            XL Struct
+        </title>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+        <!-- Meu CSS e JS -->
+        <link rel="stylesheet" href="estilo.css">
+        <script src="main.js" defer></script>
+    </head>
+
+    <body>
+
+        <header class="container-fluid">
+
+            <div class="row">
+
+                <!-- Menu Primário: Sempre visível (de baixo para cima): botão, email, logo -->
+                <div class="sidebar col-auto py-3" id="sidebar">
+                    <img src="imagens/1.png" alt="Logo" class="logo">
+                    <span class="email"><a href="mailto:geral@xlstruct.pt">geral@xlstruct.pt</a></span>
+                    <button class="toggle-btn" id="menu-btn" onclick="toggleMenu()">☰</button>
+                </div>
+
+                <div class="col-12 p-0">
+
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+    
+                        <div class="carousel-inner">
+    
+                          <div class="carousel-item active">
+                            <img src="imagens/imagem1.jpg" class="d-block w-100" alt="imagem_1">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="imagens/sun_work.jpeg" class="d-block w-100" alt="imagem_sun_work">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="imagens/imagem2.jpg" class="d-block w-100" alt="imagem_2">
+                          </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Secundário: Aparece ao lado sem esconder o primário -->
+            <div class="menu-overlay" id="menu-overlay">
+
+                <img src="imagens/1_XLS.png" class="mx-auto d-block" alt="logo">
+                <br>
+                <p class="mb-1">
+                    <a class="menu-link link-offset-2 link-underline link-underline-opacity-0" href="#sobre">Sobre Nós</a>
+                </p>
+                <p class="mb-1">
+                    <a class="menu-link link-offset-2 link-underline link-underline-opacity-0" href="#onde">Onde Estamos</a>
+                </p>
+                <p>
+                    <a class="menu-link link-offset-2 link-underline link-underline-opacity-0" href="#rodape">Contactos</a>
+                </p>
+                                
+                <p><strong>Empresa:</strong><br>Unbeatablestructure - Lda<br>NIPC - 518632725</p>
+
+                <p><strong>Sede:</strong><br>Edificio Torre Brasil<br>Rua Comissão de iniciativa, 2A Escritório 301<br>2410-098 Leiria</p>
+
+                <p><strong>Contactos:</strong><br>+351 244 840 083<br><span class="custo">* Custo de Chamada para a rede fixa nacional</span></p>
+                <br>
+
+                <p>
+                    <a class="menu-link sociais" href="#"><img src="imagens/instagram.svg" alt="instagram"></a>
+                    <a class="menu-link sociais" href="#"><img src="imagens/facebook.svg" alt="facebook"></a>
+                    <a class="menu-link sociais" href="https://www.linkedin.com/company/xlstruct/?viewAsMember=true" target="_blank"><img src="imagens/linkedin.svg" alt="linkedin"></a>
+                </p>
+
+            </div>
+        </header>
+
+        <!-- main -->
+        <main class="container-fluid">
+
+            <div class="row" id="sobre">
+
+                <div class="col-8 mx-auto text-center">
+                    <img src="imagens/1_XLS.png" class="img-fluid imagem" alt="...">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="px-1 px-md-2 col-10 col-md-9 mx-auto text-center">
+                    
+                    <h1 class="subtitulo">
+                        Inovação e Sustentabilidade na Construção
+                    </h1>
+
+                </div>
+            </div>
+
+            <div class="row mt-3 mt-md-5">
+                <div class="px-1 px-md-2 col-10 col-md-9 px-xl-5 mx-auto texto">
+
+                    <p>
+                        Na XLStruct, estamos a redefinir o futuro da construção. Especializados em soluções alternativas à construção tradicional, combinamos know-how em pré-fabricação, sistemas modulares e sustentabilidade para criar projetos que são não só eficientes, mas também ambientalmente responsáveis.
+                    </p>
+                    <p>
+                        Com uma equipa multidisciplinar de profissionais experientes nas áreas de construção, engenharia e design, oferecemos soluções integradas que vão desde o conceito até à execução. A nossa equipa de engenharia desenvolve projetos de execução para obra em BIM (Building Information Modeling), garantindo precisão, coordenação e otimização em todas as fases do projeto.
+                    </p>
+                    <p>
+                        Na XLStruct, acreditamos que a construção do futuro deve ser mais rápida, mais inteligente e mais sustentável. Por isso, investimos em tecnologias inovadoras e métodos construtivos que reduzem prazos, custos e impactos ambientais, sem comprometer a qualidade ou a segurança.
+                    </p>
+                    <p>
+                        Seja para projetos residenciais, comerciais ou industriais, a XLStruct está comprometida em entregar soluções que superam expectativas, unindo inovação, sustentabilidade e excelência técnica.
+                    </p>
+                    <p>
+                        Junte-se a nós na construção de um futuro mais eficiente e sustentável.
+                    </p>
+
+                </div>
+            </div>
+
+            <hr class="mt-4 mb-2 w-50 mx-auto regua">
+
+            <div class="row mt-5 mb-0" id="onde">
+
+                <div class="col-12 p-0 mapa">
+                    <div style="max-width:100%;overflow:hidden;width:100%;height:100%;"><div id="canvas-for-googlemap" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=xlstruct&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="googlecoder" href="https://www.bootstrapskins.com/themes" id="get-map-data">premium bootstrap themes</a><style>#canvas-for-googlemap img{max-height:none;max-width:none!important;background:none!important;}</style></div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- footer -->
+        <footer class="container-fluid text-white pt-4 rodape">
+
+            <div class="row justify-content-center text-center" id="rodape">
+                
+                <div class="col-md-5">
+                    <h5>Contacte-nos</h5>
+                    <p>Telefone: +351 244 840 083</p>
+                    <p><a href="mailto:geral@xlstruct.pt">geral@xlstruct.pt</a></p>
+                    <p>Rua Comissão de Iniciativa, 2A Escritório 301, Leiria</p>
+                </div>
+        
+                <div class="col-md-5">
+                    <h5>Siga-nos</h5>
+                    <a href="#"><img src="imagens/instagram.svg" class="social-icon"></a>
+                    <a href="#"><img src="imagens/facebook.svg" class="social-icon"></a>
+                    <a href="https://www.linkedin.com/company/xlstruct/?viewAsMember=true" target="_blank"><img src="imagens/linkedin.svg" class="social-icon"></a>
+                </div>
+
+            </div>
+        
+            <hr class="mt-2 mb-2 border-light w-75 mx-auto">
+        
+            <div class="text-center pb-3">
+
+                <p class="m-0">&copy; <span id="ano"></span> <a href="https://www.linkedin.com/in/luis-g-604459284" target="_blank">LGarcia. Todos os direitos reservados.</a> </p>
+
+            </div>
+        </footer>
+    </body>
+</html>
