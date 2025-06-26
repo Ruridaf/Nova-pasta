@@ -126,6 +126,52 @@ footer a{
 }
 
 
+
+
+/* Estilo para a galeria de imagens */
+
+.main-image-container {
+    width: 100%; 
+    max-width: 700px;
+    aspect-ratio: 16/9;
+    height: auto;
+    max-height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+#mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description {
+    display: none;
+}
+.description.active {
+    display: block;
+}
+.thumbnail img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s, border 0.3s;
+    border: 2px solid transparent;
+}
+.thumbnail img:hover {
+    transform: scale(1.1);
+    border: 2px solid #007bff;
+}
+
+
+
+
+
 @media all and (max-width: 768px){
 
     body{

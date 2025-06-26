@@ -16,3 +16,15 @@ document.querySelectorAll('.menu-link').forEach(link => {
 
 //Ano automatico
 document.getElementById("ano").textContent = new Date().getFullYear();
+
+
+
+function updateImage(element, descId) {
+    document.getElementById('mainImage').src = element.src;
+
+    document.querySelectorAll('.description').forEach(desc => {
+        desc.classList.remove('active');
+    });
+
+    document.getElementById(descId).classList.add('active');
+}
