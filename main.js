@@ -6,6 +6,7 @@
   function setMenuState(isOpen) {
     menuBtn.setAttribute('aria-expanded', String(isOpen));
     menuOverlay.classList.toggle('expanded', isOpen);
+    menuBtn.textContent = isOpen ? '✖' : '☰';
   }
 
   // Alterna o estado do menu
