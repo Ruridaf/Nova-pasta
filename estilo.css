@@ -99,7 +99,7 @@ body{
     margin: 0 5px;
 }
 
-.sociais img:hover{
+.sociais img:hover, .social-icon:hover{
     transform: scale(1.2);
 }
 
@@ -121,10 +121,6 @@ footer a{
     margin: 5px;
     transition: transform 0.3s ease;
 }
-.social-icon:hover{
-    transform: scale(1.2);
-}
-
 
 
 
@@ -165,7 +161,7 @@ footer a{
 }
 .thumbnail img:hover {
     transform: scale(1.1);
-    border: 2px solid #007bff;
+    border: 2px solid #486eb4;
 }
 
 
